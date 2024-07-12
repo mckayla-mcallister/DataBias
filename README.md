@@ -1,38 +1,30 @@
 # Data Bias
 
-This project takes input given in .txt files and randomizes it in a specific way to output potential Minecraft building challenges. This program would be great to use for synchronous building challenges in the game, as it would require coming up with prompts that increase in difficulty as the event continues.
+This project explores the potential bias of the data in adult.data. By creating models for each gender tag separately, creating one model for the combined dataset, and then comparing the accuracy of each model, we can begin to understand whether or not the different machine learning models tested locate bias within the data.
 
 ## Description
 
-While attending university, I used a lot of my knowledge to create projects that would help me accomplish things I was doing in my free time. One of my hobbies is playing video games. For a while, I was the head of a small gaming community that played an assortment of games together. At one point, we added a few people to the team and started hosting events, with different prizes. One of the events that we held was a Minecraft build competition. However, it wasn't easy to prove that members who were friends with admins would not get access to the prompts before the event. So, I created a program that we used to make the prompts progressively more difficult in a way that we could manage by editing the files that provided different aspects of the prompts. This way, the secrecy of the prompts could remain, as not even those running the event would know what the prompts were until they were picked that day. 
+The goal was to compare different machine learning analysis methods to find out which, if any, will pick up on potential biases in the data. Ideally, a machine learning method should be at least 90% accurate. In this dataset, the models are attempting to distinguish whether or not a given person makes more than $50,000 per year. The two models tested are neural networks and decision trees. The models were created based on one protected variable at a time (in this case, there is a “male” and “female” model). That way, we have the accuracy for each value of the protected variable, and we can calculate how different they are from each other to attempt to determine if the bias is too steep for our data. It is important to remember that while methods can be biased, it is also possible that the data that we are using is biased.
+
+Although both methods passed our test for bias, neither method passed the basic accuracy standard of 90%. This indicates that, though the data is not biased, the dataset is also not adequate enough for machine learning to create an accurate model. Perhaps integrating the weight variable (which indicates how many times similar data appeared in the original dataset) would have impacted the data in a way that allowed the model to be more accurate. I did try implementing this solution, as I suspect the data is skewed towards uncommon values, but the data frame could not handle the request to duplicate all the columns because of the size. 
 
 ## Getting Started
-
-### Dependencies
-The program imports two classes:
-* java.io.File;
-* java.util.Scanner;
-These imports allow the program to read the .txt files.
 
 ### Installing
 
 * Use Git Hub to download the program files.
-* Import into your favorite Java IDE.
-* If you change the .txt files to include more or fewer lines, adjust the beginning of the MinecraftBuild.java file to include the new number of lines in the corresponding files.
+* Read Miniproject 3.docx to see my full analysis of the data.
+* View adult.data to gain an understanding of the dataset.
+* Open miniproject3.R in your favorite compatible IDE (like RStudio or Visual Studio).
+* Edit line 13 to reflect where you've downloaded the files.
 Example:
-If you change the adjectives.txt file to include 75 lines, each with a different adjective on each line, line 7 of MinecraftBuild.java should instead read as follows:
 ```
-String[] adjectives = new String[75]; #75 lines in the adjectives.txt file
+setwd("C:/Users/user/Downloads/Miniproject3")
 ```
-
 ### Executing program
 
-* Download the program and import it into your favorite Java-enabled IDE.
-* Press run.
-* The program will terminate with output to the console with random challenges.
-
-## Help
-If you wish to change the file used or the number of items in a file, you must edit the source code at the beginning of the MinecraftBuild.java file. Note that the number of items in a file is the same as the number of lines in the file, which is also the same as the number in the arrays created at the beginning of the MinecraftBuild.java file.
+* After setting the working directory in your miniproject3.R file, save it and run it.
+* The program will update you in the console as it runs.
 
 ## Authors
 McKayla McAllister
