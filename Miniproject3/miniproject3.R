@@ -10,7 +10,7 @@ library(tidyverse)
 library(rpart)
 library(rpart.plot)
 
-setwd("C:/Users/micky/OneDrive/Desktop/DataScience/Miniproject3")
+setwd("C:/Users/User/Downlaods/Miniproject3")
 df_raw <- read.delim("adult.DATA", sep=",", header=FALSE)
 colnames(df_raw) <- c("age", "workclass", "fnlwgt", "education", "education_num", "marital_status", "occupation", "relationship", "race", "sex", "capital_gain", "capital_loss", "hours_worked", "native_country", "income")
 view(df_raw)
